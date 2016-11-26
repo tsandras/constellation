@@ -1,0 +1,11 @@
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'config/initializers/*'
+    - 'config/environments/*'
+    - 'bin/spring'
+Metrics/LineLength:
+  Max: 90
+Metrics/MethodLength:
+  CountComments: false
+  Max: 12
