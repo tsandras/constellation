@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Standard code:</strong>
+  <%= @system.standard_code %>
+</p>
+
+<p>
+  <strong>Internal code:</strong>
+  <%= @system.internal_code %>
+</p>
+
+<p>
+  <strong>Particular name:</strong>
+  <%= @system.particular_name %>
+</p>
+
+<p>
+  <strong>X:</strong>
+  <%= @system.x %>
+</p>
+
+<p>
+  <strong>Y:</strong>
+  <%= @system.y %>
+</p>
+
+<%= link_to 'Edit', edit_system_path(@system) %> |
+<%= link_to 'Back', systems_path %>

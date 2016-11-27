@@ -1,0 +1,62 @@
+# == Schema Information
+#
+# Table name: planets
+#
+#  id                   :integer          not null, primary key
+#  star_id              :integer          not null
+#  standard_code        :string           not null
+#  internal_code        :string           not null
+#  particular_name      :string
+#  position             :string           default("a"), not null
+#  star_distance        :float            default(1.0), not null
+#  diameter             :integer          default(12742), not null
+#  mass                 :float            default(1.0), not null
+#  orbital_period       :float            default(365.25), not null
+#  orbital_eccentricity :float            default(0.01), not null
+#  rotation_period      :float            default(1.0), not null
+#  surface_gravity      :float            default(1.0), not null
+#  surface_pressure     :float            default(1.0), not null
+#  surface_temperature  :integer          default(350), not null
+#  surface_type         :string           default("t"), not null
+#  escape_velocity      :float            default(11.15), not null
+#  composition          :text
+#  description          :text
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  star_id: 1
+  standard_code: MyString
+  internal_code: MyString
+  particular_name: MyString
+  position: MyString
+  star_distance: 1.5
+  diameter: 1
+  mass: 1.5
+  surface_gravity: 1.5
+  orbital_period: 1.5
+  rotation_period: 1.5
+  escape_velocity: 1.5
+  surface_pressure: 1.5
+  composition: MyText
+  description: MyText
+
+two:
+  star_id: 1
+  standard_code: MyString
+  internal_code: MyString
+  particular_name: MyString
+  position: MyString
+  star_distance: 1.5
+  diameter: 1
+  mass: 1.5
+  surface_gravity: 1.5
+  orbital_period: 1.5
+  rotation_period: 1.5
+  escape_velocity: 1.5
+  surface_pressure: 1.5
+  composition: MyText
+  description: MyText

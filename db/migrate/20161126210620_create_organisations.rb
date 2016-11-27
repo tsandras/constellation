@@ -3,8 +3,8 @@ class CreateOrganisations < ActiveRecord::Migration[5.0]
   def change
     create_table :organisations do |t|
       t.string :name, null: false
-      t.text :description
-      t.text :history
+      t.text :description, null: true
+      t.text :history, null: true
       t.timestamps
     end
     add_index :organisations, :name, unique: true
