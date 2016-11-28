@@ -11,14 +11,14 @@
 #  spectral_class    :string           not null
 #  spectral_subclass :string           not null
 #  luminosity_class  :string           not null
-#  prefix            :string
-#  suffix            :string
+#  prefix            :string           default(""), not null
+#  suffix            :string           default(""), not null
 #  rotation          :integer          default(28), not null
 #  temperature       :integer          default(5750), not null
 #  age               :float            default(4.5), not null
 #  mass              :float            default(1.0), not null
 #  rayon             :float            default(1.0), not null
-#  composition       :text
+#  star_composition  :json
 #  description       :text
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
