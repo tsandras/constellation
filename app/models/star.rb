@@ -47,7 +47,7 @@ class Star < ApplicationRecord
   }.freeze
 
   belongs_to :system
-  has_many :stars
+  has_many :planets
 
   validates :particular_name, uniqueness: true, allow_nil: true
   validates :system_id, presence: true
