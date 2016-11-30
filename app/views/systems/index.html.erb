@@ -32,6 +32,29 @@
 
 <br>
 
+<canvas width="100" height="100" id="canvas"></canvas>
+<canvas width="100" height="100" id="canvas2"></canvas>
+<canvas width="100" height="100" id="canvas3"></canvas>
+<canvas width="100" height="100" id="canvas4"></canvas>
+
 <%= link_to 'New System', new_system_path %>
 
-<%= react_component 'SystemStarsSelector', { data: @systems } %>
+<script type="text/javascript">
+  $( document ).ready(function() {
+    test = new StellarSystem('ABa1b12')
+    test.constructTree()
+    test.draw('canvas')
+
+    test = new StellarSystem('ABab')
+    test.constructTree()
+    test.draw('canvas2')
+
+    test = new StellarSystem('Aa1')
+    test.constructTree()
+    test.draw('canvas3')
+
+    test = new StellarSystem('Aa0b')
+    test.constructTree()
+    test.draw('canvas4')
+  });
+</script>

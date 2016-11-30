@@ -16,6 +16,7 @@ class SystemsController < ApplicationController
   # GET /systems/new
   def new
     @system = System.new
+    @test = 'coucou'
   end
 
   # GET /systems/1/edit

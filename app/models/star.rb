@@ -4,10 +4,12 @@
 #
 #  id                :integer          not null, primary key
 #  system_id         :integer          not null
+#  star_id           :integer
 #  standard_code     :string           not null
 #  internal_code     :string           not null
 #  particular_name   :string
 #  position          :string           default("A"), not null
+#  rotation_type     :string           default("star"), not null
 #  spectral_class    :string           not null
 #  spectral_subclass :string           not null
 #  luminosity_class  :string           not null
@@ -45,9 +47,11 @@ class Star < ApplicationRecord
     T: { tmin: 550, tmax: 1300, mmin: 0.02, mmax: 0.05, rmin: 0.05, rmax: 0.1 },
     Y: { tmin: 250, tmax: 550, mmin: 0.01, mmax: 0.02, rmin: 0.01, rmax: 0.05 }
   }.freeze
+  ROTATION_TYPES = %w(star secondary binary).freeze
 
   belongs_to :system
   has_many :planets
+  has_many :stars
 
   validates :particular_name, uniqueness: true, allow_nil: true
   validates :system_id, presence: true

@@ -2,10 +2,12 @@ class CreateStars < ActiveRecord::Migration[5.0]
   def change
     create_table :stars do |t|
       t.integer :system_id, null: false
+      t.integer :star_id
       t.string :standard_code, null: false
       t.string :internal_code, null: false
       t.string :particular_name
       t.string :position, null: false, default: 'A'
+      t.string :rotation_type, null: false, default: 'star'
       t.string :spectral_class, null: false
       t.string :spectral_subclass, null: false
       t.string :luminosity_class, null: false

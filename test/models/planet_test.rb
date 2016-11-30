@@ -4,10 +4,12 @@
 #
 #  id                     :integer          not null, primary key
 #  star_id                :integer          not null
+#  planet_id              :integer
 #  standard_code          :string           not null
 #  internal_code          :string           not null
 #  particular_name        :string
 #  position               :string           default("a"), not null
+#  rotation_type          :string           default("planet"), not null
 #  star_distance          :float            default(1.0), not null
 #  diameter               :integer          default(12742), not null
 #  mass                   :float            default(1.0), not null

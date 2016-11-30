@@ -1,3 +1,8 @@
+<%= react_component 'SystemStarsSelector', { data: @systems, test: @test } %>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-triangle">
+  <polygon points="0,0 100,0 50,100"/>
+</svg>
+
 <%= form_for(system) do |f| %>
   <% if system.errors.any? %>
     <div id="error_explanation">

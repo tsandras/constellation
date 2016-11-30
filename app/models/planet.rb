@@ -4,10 +4,12 @@
 #
 #  id                     :integer          not null, primary key
 #  star_id                :integer          not null
+#  planet_id              :integer
 #  standard_code          :string           not null
 #  internal_code          :string           not null
 #  particular_name        :string
 #  position               :string           default("a"), not null
+#  rotation_type          :string           default("planet"), not null
 #  star_distance          :float            default(1.0), not null
 #  diameter               :integer          default(12742), not null
 #  mass                   :float            default(1.0), not null
@@ -32,8 +34,10 @@ class Planet < ApplicationRecord
 
   POSITION = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z).freeze
   SURFACE_TYPE = %w(t i g).freeze
+  ROTATION_TYPES = %w(planet satellite).freeze
 
   belongs_to :star
+  has_many :planets
 
   validates :particular_name, uniqueness: true, allow_nil: true
   validates :star_id, presence: true

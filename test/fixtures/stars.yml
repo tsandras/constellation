@@ -4,10 +4,12 @@
 #
 #  id                :integer          not null, primary key
 #  system_id         :integer          not null
+#  star_id           :integer
 #  standard_code     :string           not null
 #  internal_code     :string           not null
 #  particular_name   :string
 #  position          :string           default("A"), not null
+#  rotation_type     :string           default("star"), not null
 #  spectral_class    :string           not null
 #  spectral_subclass :string           not null
 #  luminosity_class  :string           not null
