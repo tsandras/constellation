@@ -1,6 +1,7 @@
 # app/controllers/systems_controller.rb
 class SystemsController < ApplicationController
   before_action :set_system, only: [:show, :edit, :update, :destroy]
+  before_action :set_standard_codes, only: [:new, :edit]
 
   # GET /systems
   # GET /systems.json
@@ -16,7 +17,6 @@ class SystemsController < ApplicationController
   # GET /systems/new
   def new
     @system = System.new
-    @test = 'coucou'
   end
 
   # GET /systems/1/edit
@@ -27,13 +27,12 @@ class SystemsController < ApplicationController
   # POST /systems.json
   def create
     @system = System.new(system_params)
-
     respond_to do |format|
       if @system.save
-        format.html { redirect_to @system, notice: 'System was successfully created.' }
+        # format.html { redirect_to @system, notice: 'System was successfully created.' }
         format.json { render :show, status: :created, location: @system }
       else
-        format.html { render :new }
+        # format.html { render :new }
         format.json { render json: @system.errors, status: :unprocessable_entity }
       end
     end
@@ -70,6 +69,10 @@ class SystemsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_system
     @system = System.find(params[:id])
+  end
+
+  def set_standard_codes
+    @standard_codes = System::STANDARD_CODES
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

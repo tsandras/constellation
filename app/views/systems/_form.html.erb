@@ -1,47 +1,54 @@
-<%= react_component 'SystemStarsSelector', { data: @systems, test: @test } %>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-triangle">
-  <polygon points="0,0 100,0 50,100"/>
-</svg>
+<div class="row">
+  <div class="col-md-6">
+    <%= react_component 'SystemStarsSelector', { data: @systems, standard_codes: @standard_codes } %>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-triangle">
+      <polygon points="0,0 100,0 50,100"/>
+    </svg>
+  </div>
+  <div class="col-md-6">
+    <%= react_component 'SystemDisplaying', { system: @system } %>
+  </div>
+</div>
 
-<%= form_for(system) do |f| %>
-  <% if system.errors.any? %>
+<!-- <%#= form_for(system) do |f| %>
+  <%# if system.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(system.errors.count, "error") %> prohibited this system from being saved:</h2>
+      <h2><%#= pluralize(system.errors.count, "error") %> prohibited this system from being saved:</h2>
 
       <ul>
-      <% system.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+      <%# system.errors.full_messages.each do |message| %>
+        <li><%#= message %></li>
+      <%# end %>
       </ul>
     </div>
-  <% end %>
+  <%# end %>
 
   <div class="field">
-    <%= f.label :standard_code %>
-    <%= f.text_field :standard_code %>
+    <%#= f.label :standard_code %>
+    <%#= f.text_field :standard_code %>
   </div>
 
   <div class="field">
-    <%= f.label :internal_code %>
-    <%= f.text_field :internal_code %>
+    <%#= f.label :internal_code %>
+    <%#= f.text_field :internal_code %>
   </div>
 
   <div class="field">
-    <%= f.label :particular_name %>
-    <%= f.text_field :particular_name %>
+    <%#= f.label :particular_name %>
+    <%#= f.text_field :particular_name %>
   </div>
 
   <div class="field">
-    <%= f.label :x %>
-    <%= f.number_field :x %>
+    <%#= f.label :x %>
+    <%#= f.number_field :x %>
   </div>
 
   <div class="field">
-    <%= f.label :y %>
-    <%= f.number_field :y %>
+    <%#= f.label :y %>
+    <%#= f.number_field :y %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%#= f.submit %>
   </div>
-<% end %>
+<%# end %> -->

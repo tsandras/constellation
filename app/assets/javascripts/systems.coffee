@@ -63,9 +63,11 @@ class @StellarSystem
       i = 0
       posKey = 0
       if !jQuery.isEmptyObject(val)
-         for key, val of val
+         for key, value of val
             i = i + 1
+            console.log key, value
             if key == keyEl
+              console.log 'position !' + i
               pos = i
     if pos >= i
       return true
@@ -108,7 +110,7 @@ class @StellarSystem
     i = 0
     for key, val of @tree
       if !jQuery.isEmptyObject(val)
-         for key, val of val
+         for key, value of val
             i = i + 1
     return i
 

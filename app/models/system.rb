@@ -17,9 +17,7 @@
 # app/models/system.rb
 class System < ApplicationRecord
   STANDARD_CODES = %w(
-    A AB (AB) ABC (AB)C A(BC) (ABC) ABCD (AB)(CD)
-    (AB)CD AB(CD) A(BC)D ABCDE (AB)CDE A(BC)DE AB(CD)E
-    ABC(DE) (ABC)(DE) (AB)(CDE) A(BCD)E ?????
+    A AB Aa ABC Aab ABa Aa1 Aa0b ABab ABCa Aa12 Aabc Aab1
   ).freeze
 
   has_many :stars
@@ -28,12 +26,8 @@ class System < ApplicationRecord
   validates :standard_code, inclusion: { in: STANDARD_CODES }
   validates :internal_code, presence: true
 
-  before_validation :set_standard_code, :set_internal_code
-  before_save :set_standard_code, :set_internal_code
-
-  def set_standard_code
-    self.standard_code = 'tmp'
-  end
+  before_validation :set_internal_code
+  before_save :set_internal_code
 
   def set_internal_code
     self.internal_code = 'tmp'
