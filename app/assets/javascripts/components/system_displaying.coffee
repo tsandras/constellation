@@ -1,6 +1,5 @@
 @SystemDisplaying = React.createClass
   getInitialState: () ->
-    # console.log @props
     if @props.system
       showSystem: true
     else
@@ -11,7 +10,6 @@
     stelSys.draw('scanvas')
   componentDidMount: -> @updateCanvas()
   render: ->
-    console.log @props.system.standard_code
     React.DOM.div
       className: 'system-displaying'
       if @state.showSystem

@@ -32,4 +32,44 @@ class System < ApplicationRecord
   def set_internal_code
     self.internal_code = 'tmp'
   end
+
+  def tree
+    tree = {}
+    number = -1
+    col = 0..(standard_code.length - 1)
+    col.each do |i|
+      if maj?(standard_code[i]) && !min?(standard_code[i])
+        tree[standard_code[i]] = {}
+        last_first = standard_code[i]
+        number = -1
+      elsif min?(standard_code[i]) && !maj?(standard_code[i])
+        tmp = {}
+        tmp[standard_code[i]] = []
+        tree[last_first] = tree[last_first].merge(tmp)
+        last_second = standard_code[i]
+        number += 1
+      elsif alpha?(standard_code[i])
+        tree[last_first][last_second].push(standard_code[i])
+      end
+    end
+    tree
+  end
+
+  private
+
+  def maj?(char)
+    return false if char.upcase != char
+    true
+  end
+
+  def alpha?(char)
+    res = Integer(char) rescue false
+    return true if res != false
+    false
+  end
+
+  def min?(char)
+    return false if char.downcase != char
+    true
+  end
 end

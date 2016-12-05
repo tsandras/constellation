@@ -36,7 +36,7 @@ class @StellarSystem
   constructTree: () ->
     number = -1
     i = 0
-    while i < @standardCode.length
+    while @standardCode && i < @standardCode.length
       if @isMaj(@standardCode[i]) && !@isMin(@standardCode[i])
         @tree[@standardCode[i]] = {}
         lastFirst = @standardCode[i]
@@ -65,9 +65,7 @@ class @StellarSystem
       if !jQuery.isEmptyObject(val)
          for key, value of val
             i = i + 1
-            console.log key, value
             if key == keyEl
-              console.log 'position !' + i
               pos = i
     if pos >= i
       return true
@@ -93,7 +91,6 @@ class @StellarSystem
               for j in array
                 i = i + 1
                 if j == valEl
-                  console.log 'valeur Thrid', i
                   return i
     return 0
 
